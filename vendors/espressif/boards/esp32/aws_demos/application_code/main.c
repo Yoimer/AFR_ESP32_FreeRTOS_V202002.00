@@ -73,10 +73,6 @@
     #include "iot_ble_numericComparison.h"
 #endif
 
-#include "sensors.h"
-#include <bmp180.h>
-
-
 /* Logging Task Defines. */
 #define mainLOGGING_MESSAGE_QUEUE_LENGTH    ( 32 )
 #define mainLOGGING_TASK_STACK_SIZE         ( configMINIMAL_STACK_SIZE * 4 )
@@ -137,8 +133,6 @@ int app_main( void )
         #endif /* if BLE_ENABLED */
         /* Run all demos. */
         DEMO_RUNNER_RunDemos();
-        ESP_ERROR_CHECK_WITHOUT_ABORT(i2cdev_init());
-        xTaskCreate(sensors_task, "sensors_task", configMINIMAL_STACK_SIZE * 15, NULL, 5, NULL);
     }
 
     /* Start the scheduler.  Initialization that requires the OS to be running,

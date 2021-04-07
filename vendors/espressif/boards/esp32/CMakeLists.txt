@@ -438,13 +438,6 @@ get_filename_component(
 
 list(APPEND IDF_EXTRA_COMPONENT_DIRS ${EXTRA_COMPONENT_DIRS})
 
-get_filename_component(
-    EXTRA_COMPONENT_DIRS
-    "components/gps" ABSOLUTE
-)
-
-list(APPEND IDF_EXTRA_COMPONENT_DIRS ${EXTRA_COMPONENT_DIRS})
-
 endif()
 
 # This is a hack to have IDF build system use PRIVATE keyword when
