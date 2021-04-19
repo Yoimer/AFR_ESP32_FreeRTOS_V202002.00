@@ -91,7 +91,7 @@
  * the selected communication channel before aborting and returning error.
  *
  */
-#define otaconfigMAX_NUM_REQUEST_MOMENTUM       32U
+#define otaconfigMAX_NUM_REQUEST_MOMENTUM       1U
 
 /**
  * @brief The number of data buffers reserved by the OTA agent.

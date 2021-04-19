@@ -107,6 +107,7 @@ static esp_err_t event_handler(void *ctx, system_event_t *event)
         case SYSTEM_EVENT_STA_DISCONNECTED:
             ESP_LOGI(TAG, "SYSTEM_EVENT_STA_DISCONNECTED: %d", info->disconnected.reason);
             wifi_auth_failure = false;
+            esp_wifi_connect();
 
             /* Set code corresponding to the reason for disconnection */
             switch (info->disconnected.reason) {
